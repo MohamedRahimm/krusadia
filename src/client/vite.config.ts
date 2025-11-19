@@ -5,7 +5,7 @@ export default defineConfig({
   base:"./",
   build: {
     outDir: '../../dist/client',
-    assetsDir: "", // don’t put files in /assets
+    assetsDir: "", 
     emptyOutDir: true,
     sourcemap: true,
     rollupOptions: {

@@ -1,0 +1,251 @@
+[gd_scene load_steps=24 format=3 uid="uid://cnwucxlp30pox"]
+
+[ext_resource type="Script" uid="uid://cfwgoscb43qll" path="res://level_editor.gd" id="1_glxo0"]
+[ext_resource type="Texture2D" uid="uid://0r7ygv2g2km3" path="res://assets/texture/sprite_sheet.png" id="2_001ro"]
+[ext_resource type="Script" uid="uid://dct221rt44bbi" path="res://scripts/level_grid.gd" id="2_2tor1"]
+[ext_resource type="Theme" uid="uid://djkoanyoeks47" path="res://assets/resources/default_theme.tres" id="2_d4xm1"]
+[ext_resource type="Texture2D" uid="uid://cnogsur5my2l7" path="res://assets/texture/trash.png" id="4_d4xm1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b42rl"]
+atlas = ExtResource("2_001ro")
+region = Rect2(0, 0, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5qu4"]
+atlas = ExtResource("2_001ro")
+region = Rect2(64, 0, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o0av"]
+atlas = ExtResource("2_001ro")
+region = Rect2(128, 0, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1845"]
+atlas = ExtResource("2_001ro")
+region = Rect2(192, 0, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1xt7"]
+atlas = ExtResource("2_001ro")
+region = Rect2(256, 0, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utr6r"]
+atlas = ExtResource("2_001ro")
+region = Rect2(320, 0, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd3l8"]
+atlas = ExtResource("2_001ro")
+region = Rect2(0, 64, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glbbs"]
+atlas = ExtResource("2_001ro")
+region = Rect2(64, 64, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfpnj"]
+atlas = ExtResource("2_001ro")
+region = Rect2(128, 64, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_milfh"]
+atlas = ExtResource("2_001ro")
+region = Rect2(192, 64, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyu00"]
+atlas = ExtResource("2_001ro")
+region = Rect2(256, 64, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0pav"]
+atlas = ExtResource("2_001ro")
+region = Rect2(320, 64, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tor1"]
+atlas = ExtResource("2_001ro")
+region = Rect2(0, 128, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4xm1"]
+atlas = ExtResource("2_001ro")
+region = Rect2(64, 128, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6wlr"]
+atlas = ExtResource("2_001ro")
+region = Rect2(128, 128, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7e2x"]
+atlas = ExtResource("2_001ro")
+region = Rect2(256, 128, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibsxp"]
+atlas = ExtResource("2_001ro")
+region = Rect2(320, 128, 64, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0xip"]
+atlas = ExtResource("2_001ro")
+region = Rect2(0, 192, 64, 64)
+filter_clip = true
+
+[node name="LevelEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glxo0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelArea" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackgroundGrid" type="GridContainer" parent="HBoxContainer/LevelArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_d4xm1")
+columns = 11
+script = ExtResource("2_2tor1")
+color_one = Color(0.32544088, 0.3254409, 0.32544088, 1)
+color_two = Color(0.45840502, 0.45840508, 0.45840502, 1)
+
+[node name="PlacementGrid" type="Control" parent="HBoxContainer/LevelArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_d4xm1")
+
+[node name="TrashArea" type="TextureRect" parent="HBoxContainer/LevelArea"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 64.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_d4xm1")
+expand_mode = 4
+
+[node name="UI_Area" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="AddTraps" type="Button" parent="HBoxContainer/UI_Area"]
+layout_mode = 2
+text = "Add Traps"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/UI_Area"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="Walls" type="GridContainer" parent="HBoxContainer/UI_Area"]
+layout_mode = 2
+columns = 6
+
+[node name="Wall1" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_b42rl")
+
+[node name="Wall2" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_y5qu4")
+
+[node name="Wall3" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_4o0av")
+
+[node name="Wall4" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_j1845")
+
+[node name="Wall5" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_s1xt7")
+
+[node name="Wall6" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_utr6r")
+
+[node name="Wall7" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_nd3l8")
+
+[node name="Wall8" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_glbbs")
+
+[node name="Wall9" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_vfpnj")
+
+[node name="Wall10" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_milfh")
+
+[node name="Wall11" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_wyu00")
+
+[node name="Wall12" type="TextureButton" parent="HBoxContainer/UI_Area/Walls" groups=["wall_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_q0pav")
+
+[node name="Traps" type="HBoxContainer" parent="HBoxContainer/UI_Area"]
+layout_mode = 2
+
+[node name="Spikes" type="TextureButton" parent="HBoxContainer/UI_Area/Traps" groups=["trap_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_2tor1")
+
+[node name="Exit" type="TextureButton" parent="HBoxContainer/UI_Area/Traps" groups=["trap_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_d4xm1")
+
+[node name="Entrance" type="TextureButton" parent="HBoxContainer/UI_Area/Traps" groups=["trap_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_g6wlr")
+
+[node name="Lever" type="TextureButton" parent="HBoxContainer/UI_Area/Traps" groups=["trap_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_y7e2x")
+
+[node name="Chest" type="TextureButton" parent="HBoxContainer/UI_Area/Traps" groups=["trap_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ibsxp")
+
+[node name="Barrel" type="TextureButton" parent="HBoxContainer/UI_Area/Traps" groups=["trap_button"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_s0xip")

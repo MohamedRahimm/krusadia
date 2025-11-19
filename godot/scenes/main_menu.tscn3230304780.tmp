@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh2na2l3qky5b"]
+
+[ext_resource type="Script" uid="uid://btfpfab0r1ppw" path="res://scripts/main_menu.gd" id="1_r02ye"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_r02ye")
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 41.0
+theme_type_variation = &"HeaderLarge"
+text = "2D Platformer"
+horizontal_alignment = 1
+
+[node name="Options" type="VFlowContainer" parent="."]
+offset_left = 504.0
+offset_top = 203.0
+offset_right = 681.0
+offset_bottom = 366.0
+
+[node name="StartButton" type="Button" parent="Options"]
+layout_mode = 2
+text = "Start"
+
+[node name="LeaderboardButton" type="Button" parent="Options"]
+layout_mode = 2
+text = "LeaderBoard
+"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]

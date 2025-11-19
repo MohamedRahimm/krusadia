@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=4 uid="uid://vqvucquny67u"]
+
+[ext_resource type="Script" uid="uid://co82b7lj2chl5" path="res://scripts/level.gd" id="1_g3s30"]
+[ext_resource type="Texture2D" uid="uid://0r7ygv2g2km3" path="res://assets/texture/sprite_sheet.png" id="2_elqb2"]
+[ext_resource type="PackedScene" uid="uid://bdyp538fqygcq" path="res://scenes/hud.tscn" id="3_dxtoi"]
+[ext_resource type="PackedScene" uid="uid://cboi8hec4yf0c" path="res://scenes/player.tscn" id="3_kr5fw"]
+[ext_resource type="PackedScene" uid="uid://clikcsot5ncta" path="res://scenes/door.tscn" id="4_hvikv"]
+[ext_resource type="PackedScene" uid="uid://dypev0qrj3e6s" path="res://scenes/gem.tscn" id="5_lq6yu"]
+[ext_resource type="AudioStream" uid="uid://1vgh2yhyxy3a" path="res://assets/audio/actiontheme-v3.ogg" id="7_4horr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6issp"]
+resource_name = "LevelTiles"
+texture = ExtResource("2_elqb2")
+texture_region_size = Vector2i(64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-26.5, 17, 26, 17, 28, 32, -32, 32)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-14.111847, 32, -14.6506405, -11.180754, 17.349445, -10.795212, 17.73499, 32)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_3cahp"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
+physics_layer_2/collision_layer = 4
+physics_layer_2/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_6issp")
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_g3s30")
+level_num = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(1, 0)
+tile_set = SubResource("TileSet_3cahp")
+collision_visibility_mode = 1
+format = 2
+
+[node name="LevelWalls" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAALAAMAAAABAAEAAAAMAAMAAAABAAEAAAANAAMAAAAEAAEAAAAOAAMAAAAFAAEAAAAPAAMAAAAFAAEAAAAPAAIAAAAFAAEAAAAPAAEAAAAFAAEAAAAPAAAAAAAFAAEAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAEAAAAAAAJAAMAAAABAAEAAAAKAAMAAAABAAEAAAAFAAAAAAAFAAEAAAAGAAAAAAAFAAEAAAAHAAAAAAAFAAEAAAAIAAAAAAAFAAEAAAAJAAAAAAAFAAEAAAAJAAEAAAAFAAEAAAAMAAEAAAAFAAEAAAALAAEAAAAFAAEAAAAFAP//AAAEAAAAAAAFAP7/AAAEAAAAAAAGAP7/AAAEAAAAAAAHAP7/AAAEAAAAAAAIAP7/AAAEAAAAAAAJAP7/AAADAAEAAAAKAP7/AAADAAEAAAALAP7/AAADAAEAAAAMAP7/AAADAAEAAAANAP7/AAADAAEAAAAOAP7/AAADAAEAAAAPAP7/AAADAAEAAAAPAP//AAADAAEAAAANAAEAAAAEAAEAAAA=")
+tile_set = SubResource("TileSet_3cahp")
+collision_visibility_mode = 1
+
+[node name="Traps" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAOAAIAAAACAAMAAAAGAP//AAAAAAIAAAA=")
+tile_set = SubResource("TileSet_3cahp")
+collision_visibility_mode = 1
+
+[node name="Entrances" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAGAAIAAAABAAIAAAAHAP//AAACAAIAAAA=")
+tile_set = SubResource("TileSet_3cahp")
+collision_visibility_mode = 1
+
+[node name="HUD" parent="." instance=ExtResource("3_dxtoi")]
+
+[node name="Player" parent="." instance=ExtResource("3_kr5fw")]
+position = Vector2(460, 188)
+
+[node name="Door" parent="." instance=ExtResource("4_hvikv")]
+position = Vector2(-366, -167)
+
+[node name="Label" type="Label" parent="Door"]
+offset_left = 821.0
+offset_top = 112.0
+offset_right = 875.0
+offset_bottom = 138.0
+text = "Level 2"
+
+[node name="Gems" type="Node" parent="."]
+
+[node name="Gem" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(666, 97)
+
+[node name="Gem2" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(467, 101)
+
+[node name="Gem3" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(527, 99)
+
+[node name="Gem4" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(753, 173)
+
+[node name="Gem5" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(843, 139)
+
+[node name="Gem6" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(925, 80)
+
+[node name="Gem7" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(863, 1)
+
+[node name="Gem8" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(668, 29)
+
+[node name="Gem9" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(587, -28)
+
+[node name="Gem10" parent="Gems" instance=ExtResource("5_lq6yu")]
+position = Vector2(497, 140)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4horr")
+volume_db = -8.0
