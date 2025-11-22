@@ -61,7 +61,8 @@ files.forEach((file) => {
   const ext = path.extname(file).toLowerCase();
 
   if (ext === '.js') {
-    fs.renameSync(srcPath, path.join(CLIENT_DIR, file));
+    if(file.includes(".worklet")) fs.renameSync(srcPath,path.join(PUBLIC_DIR,file))
+    else fs.renameSync(srcPath, path.join(CLIENT_DIR, file));
   } else if (ext === '.html') {
     processHtmlFile(srcPath);
     fs.unlinkSync(srcPath);

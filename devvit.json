@@ -13,21 +13,19 @@
     "dir": "dist/server",
     "entry": "index.cjs"
   },
-  "menu": {
-    "items": [
-      {
-        "label": "Create a new post",
-        "description": "krusadia",
-        "location": "subreddit",
-        "forUserType": "moderator",
-        "endpoint": "/internal/menu/post-create"
-      }
-    ]
-  },
   "triggers": {
     "onAppInstall": "/internal/on-app-install"
   },
   "dev": {
     "subreddit": "krusadia_dev"
+  },
+  "permissions": {
+  "reddit": {
+    "asUser": [
+      "SUBMIT_POST",
+      "SUBMIT_COMMENT",
+      "SUBSCRIBE_TO_SUBREDDIT"
+    ]
   }
+}
 }

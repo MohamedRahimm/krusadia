@@ -1,4 +1,4 @@
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"2DPlatformer","experimentalVK":false,"fileSizes":{"2DPlatformer.pck":8224724,"2DPlatformer.wasm":23206023},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"2DPlatformer","experimentalVK":false,"fileSizes":{"2DPlatformer.pck":8211620,"2DPlatformer.wasm":23206023},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -101,4 +101,3 @@ const engine = new Engine(GODOT_CONFIG);
 		}, displayFailureNotice);
 	}
 }());
-

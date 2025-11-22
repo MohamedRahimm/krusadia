@@ -24,7 +24,11 @@ offset_bottom = 366.0
 layout_mode = 2
 text = "Start"
 
-[node name="LeaderboardButton" type="Button" parent="Options"]
+[node name="PostButton" type="Button" parent="Options"]
+layout_mode = 2
+text = "Post"
+
+[node name="LeaderboardButton2" type="Button" parent="Options"]
 layout_mode = 2
 text = "LeaderBoard
 "
@@ -32,4 +36,5 @@ text = "LeaderBoard
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Options/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="Options/PostButton" to="." method="_on_post_button_pressed"]
+[connection signal="pressed" from="Options/LeaderboardButton2" to="." method="_on_leaderboard_button_pressed"]
